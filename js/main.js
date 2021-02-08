@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	let fetchJson = function() {
 		return new Promise(function(resolve, reject) {
-			_readJsonFile("live-chart-data.json", function(json) {
+			_readJsonFile("js/live-chart-data.json", function(json) {
 				let data = JSON.parse(json);
 				console.log("Fetching JSON data...");
 				console.log(data);
