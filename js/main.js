@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-	function select(selector) {
+	function _select(selector) {
 		return document.querySelector(selector);
 	}
 
@@ -10,9 +10,15 @@ document.addEventListener('DOMContentLoaded', function() {
 		return Array.prototype.slice.call(parent.querySelectorAll(selector), 0);
 	}
 
-	const menuBtn = select(".menu-btn");
-	const mainMenu = select(".main-menu");
-	const overlay = select(".overlay");
+	function _setAttributes(el, attrs) {
+		for(var key in attrs) {
+			el.setAttribute(key, attrs[key]);
+		}
+	}
+
+	const menuBtn = _select(".menu-btn");
+	const mainMenu = _select(".main-menu");
+	const overlay = _select(".overlay");
 
 	menuBtn.addEventListener('click', function(event) {
 		overlay.setAttribute("style", "display: block;");
@@ -29,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		navItems.forEach(function(el) {
 			el.addEventListener('click', function(e) {
 				e.preventDefault();
-				var active = select(".active");
+				var active = _select(".active");
 				var currentPageLink = active.dataset.target;
 				var targetPageLink = this.dataset.target;
 				var currentPage = document.querySelector(`[data-page='${currentPageLink}']`);
@@ -59,9 +65,11 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 	}
 
+	/*Reading json files: https://stackoverflow.com/a/41478075/12478479*/
+
 	function _readJsonFile(file, callback) {
 		let jsonFile = new XMLHttpRequest();
-		jsonFile.overrideMimeType("application/json");
+		jsonFile.overrideMimeType("application/json; charset=utf-8");
 		jsonFile.open("GET", file, true);
 		jsonFile.onreadystatechange = function() {
 			if (jsonFile.readyState === 4 && jsonFile.status == "200") {
@@ -81,9 +89,12 @@ document.addEventListener('DOMContentLoaded', function() {
 	let fetchJson = function() {
 		return new Promise(function(resolve, reject) {
 			_readJsonFile("js/live-chart-data.json", function(json) {
+				//json.replace(, "'");
 				let data = JSON.parse(json);
 				console.log("Fetching JSON data...");
 				console.log(data);
+				_menu(data);
+				//_cards(data);
 				resolve("fetchJson done.");
 			});
 		});
@@ -94,4 +105,84 @@ document.addEventListener('DOMContentLoaded', function() {
 			console.log("fromResolve");
 			console.log(fromResolve);
 		});
+
+	function _menu(data) {
+		let menu = [];
+		let navLi = [];
+		let seasons = Object.keys(data);
+		console.log(seasons);
+		let winterList = seasons.filter(s => s.includes('Winter'));
+		let springList = seasons.filter(s => s.includes('Spring'));
+		let summerList = seasons.filter(s => s.includes('Summer'));
+		let fallList = seasons.filter(s => s.includes('Fall'));
+		menu = menu.concat([winterList, springList, summerList, fallList]);
+		let winterLi = _select(".winter-list");
+		let springLi = _select(".spring-list");
+		let summerLi = _select(".summer-list");
+		let fallLi = _select(".fall-list");
+		navLi = navLi.concat([winterLi, springLi, summerLi, fallLi]);
+		console.log(winterList);
+		console.log(fallList);
+		console.log(menu);
+		console.log(navLi);
+
+		// loop through object keys and insert menu list
+		menu.forEach(function(item, index) {
+			if (item.length > 0) {
+				let list = navLi[index];
+
+				_setAttributes(list.children[0].children[1], {
+					"class": "fas fa-chevron-down"
+				});
+
+				console.log(list);
+				console.log(item.length);
+
+				menu[index].forEach(function(item, index) {
+					console.log(data[item]);
+					let html = `
+					<li class="${index == winterList.length - 1 ? '' : 'mb-2' }"><a class="pl-10 flex items-center" href="#">${item} <i class="far fa-spin fa-star"></i></a></li>
+					`;
+					list.children[1].insertAdjacentHTML("beforeend", html);
+				});
+			}
+		});
+
+		console.log("Winter 2020 Anime" in data);
+	}
+
+	function _cards(data) {
+		let seasons = Object.keys(data);
+		console.log(seasons);
+		let types = Object.keys(data[seasons[0]])
+		console.log(types);
+		console.log(data[seasons[0]][types[0]].length);
+
+		let grid = _select(".winter");
+		console.log(grid);
+
+		for (let i = 0; i < data[seasons[0]][types[0]].length; i++) {
+			console.log(data[seasons[0]][types[0]][i]["anime-synopsis"]);
+			let html = `
+			<div class="flex bg-white rounded overflow-hidden mb-4 md:mb-0">
+				<div class="relative pr-48">
+					<img class="absolute h-full w-full object-cover" src="${data[seasons[0]][types[0]][i]["poster-img-link"]}">
+				</div>
+				<div class="flex flex-col">
+					<div class="p-4">
+						<h4 class="text-lg font-bold">${data[seasons[0]][types[0]][i]["main-title"]}</h4>
+						<span class="text-sm text-gray-400">${data[seasons[0]][types[0]][i]["anime-tags"].join(" · ")}</span>
+					</div>
+					<div class="overflow-auto h-36 pl-4 flex-grow">
+						${data[seasons[0]][types[0]][i]["anime-synopsis"].map((item, index) => `
+							<p class="mb-2 ${item['className']}">${item['text']}</p>
+						`.trim()).join('')}
+					</div>
+				</div>
+			</div>
+			`;
+
+			grid.insertAdjacentHTML("beforeend", html);
+		}
+	}
 });

@@ -4,24 +4,9 @@
 	<title>Latest Anime 2020</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 	<link href="css/tailwind.min.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
 	<style type="text/css">
-		main {
-			touch-action: pan-y pinch-zoom;
-		}
-		h1 {
-			background: linear-gradient(312deg, rgba(220, 38, 38,1) 0%, rgba(67, 56, 202,1) 35%, rgba(220, 38, 38,1) 100%);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-		}
-
-		.active {
-			color: white;
-			background-color: rgba(59,130,246,1);
-		}
-
-		.page {
-			height: calc(100vh - 64px);
-		}
+		
 	</style>
 	<link rel="icon" type="image/png" href="img/latest-anime.png" />
 	<link href="css/fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet">
@@ -49,17 +34,33 @@
 			<aside class="main-menu flex flex-col justify-between transform top-0 left-0 w-72 bg-white fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30 -translate-x-full">
 				<h1 class="text-2xl font-sans tracking-wider border-b p-4 mb-4">Latest Anime 2020 &#12290;</h1>
 				<ul class="flex flex-col flex-1 justify-start text-xl">
-					<li class="mb-2">
-						<a class="nav-item block px-4 py-2 hover:bg-blue-500 hover:text-white" href="#" data-target="1"><i class="fas fa-snowflake"></i> Winter</a>
+					<li class="nav-li expand winter-list mb-2">
+						<a class="nav-item block flex items-center justify-between px-4 py-2" href="#" data-target="1">
+							<span><i class="fas fa-snowflake"></i> Winter</span> <i></i>
+						</a>
+						<ul class="sub-li text-sm">
+						</ul>
 					</li>
-					<li class="mb-2">
-						<a class="nav-item block px-4 py-2 hover:bg-blue-500 hover:text-white" href="#" data-target="2"><i class="fas fa-seedling"></i> Spring</a>
+					<li class="nav-li expand spring-list mb-2">
+						<a class="nav-item block flex items-center justify-between px-4 py-2" href="#" data-target="2">
+							<span><i class="fas fa-seedling"></i> Spring</span> <i></i>
+						</a>
+						<ul class="sub-li text-sm">
+						</ul>
 					</li>
-					<li class="mb-2">
-						<a class="nav-item block px-4 py-2 hover:bg-blue-500 hover:text-white" href="#" data-target="3"><i class="fas fa-sun"></i> Summer</a>
+					<li class="nav-li expand summer-list mb-2">
+						<a class="nav-item block flex items-center justify-between px-4 py-2" href="#" data-target="3">
+							<span><i class="fas fa-sun"></i> Summer</span> <i></i>
+						</a>
+						<ul class="sub-li text-sm">
+						</ul>
 					</li>
-					<li class="mb-2">
-						<a class="nav-item block px-4 py-2 hover:bg-blue-500 hover:text-white active" href="#" data-target="4"><i class="fab fa-canadian-maple-leaf transform rotate-45"></i> Fall</a>
+					<li class="nav-li expand fall-list mb-2">
+						<a class="nav-item block flex items-center justify-between px-4 py-2 active" href="#" data-target="4">
+							<span><i class="fab fa-canadian-maple-leaf transform rotate-45"></i> Fall</span> <i></i>
+						</a>
+						<ul class="sub-li text-sm">
+						</ul>
 					</li>
 				</ul>
 				<div class="p-4 text-center text-sm">
@@ -73,166 +74,7 @@
 		<!-- WINTER -->
 		<section class="page w-full overflow-auto absolute inset-0 p-4 transition-all ease-in-out duration-1000 transform translate-x-full" data-page="1">
 			<h2 class="text-3xl font-bold mb-4 text-white">Winter 2020 Anime <span class="text-sm">January 2020–March 2020</span></h2>
-			<div class="grid grid-cols-1 md:grid-cols-2 md:gap-3">
-
-				<div class="flex bg-white rounded overflow-hidden mb-4 md:mb-0">
-					<div class="relative pr-48">
-						<img class="absolute h-full w-full object-cover" src="https://u.livechart.me/anime/8663/poster_image/b64a709f9d8e5908a333d2493bc924c3.jpg?style=small&format=jpg">
-					</div>
-					<div class="flex flex-col justify-between p-4 pr-0">
-						<div>
-							<h4 class="text-lg font-bold">Itai no wa Iya nano de Bougyoryoku ni Kyokufuri Shitai to Omoimasu.</h4>
-							<span class="text-sm text-gray-400">Action · Adventure · Comedy · Fantasy · Sci-Fi · Slice of Life</span>
-						</div>
-						<div class="overflow-auto h-36">
-							<p>
-								Kaede Honjou is invited by her friend Risa Shiramine to play a virtual reality MMO game with her. While Kaede doesn't dislike games, what she really, truly dislikes is being in pain. She creates a character named Maple, and decides to put all her points in VIT to minimize pain. As a result, she moves slowly, can't use magic, and even a rabbit can get the best of her. But as it turns out, she acquires a skill known as "Absolute Defense" as a result of her pumping points into VIT, as well as a "Counter Skill" that works against special moves. Now, with her ability to nullify all damage, she goes on adventures.
-							</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="flex bg-white rounded overflow-hidden mb-4 md:mb-0">
-					<div class="relative pr-48">
-						<img class="absolute h-full w-full object-cover" src="https://u.livechart.me/anime/8230/poster_image/d80748a2dc1a1a397607d3f960bc3327.png?style=small&format=jpg">
-					</div>
-					<div class="flex flex-col justify-between p-4 pr-0">
-						<div>
-							<h4 class="text-lg font-bold">Darwin's Game</h4>
-							<span class="text-sm text-gray-400">Action · Mystery · Shounen</span>
-						</div>
-						<div class="overflow-auto h-36">
-							<p class="mb-2">An unpredictable battle of superpowers.</p>
-							<p class="mb-2">Kaname Sudo, an ordinary high school student, receives an invitation email to try a mysterious app called "Darwin's Game."</p>
-							<p class="mb-2">Kaname, upon launching the app, is drawn into a game where players fight one another using superpowers called Sigils.</p>
-							<p>Without knowing the reason for all this, can Kaname survive furious battles against the powerful players who attack him?</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="flex bg-white rounded overflow-hidden mb-4 md:mb-0">
-					<div class="relative pr-48">
-						<img class="absolute h-full w-full object-cover" src="https://u.livechart.me/anime/9193/poster_image/bdff94d828fbdaa2c20ac3a03e4872e1.png?style=small&format=jpg">
-					</div>
-					<div class="flex flex-col justify-between p-4 pr-0">
-						<div>
-							<h4 class="text-lg font-bold">Kyokou Suiri</h4>
-							<span class="text-sm text-gray-400">Comedy · Mystery · Romance · Shounen · Supernatural</span>
-						</div>
-						<div class="overflow-auto h-36">
-							<p>The 17-year-old Kotoko has a unique situation. When she was a child, she was kidnapped by spirits called youkai, and returned missing one leg and one eye. Since then, she has been able to communicate with otherworldly forces, both benevolent and dangerous. Kotoko is alone in her power until she learns that the crush she's watched from afar, Kurou, has had his own encounter with youkai! As if being touched by the supernatural wasn't enough, Kurou's personal life is also in shambles. With their shared experiences and understanding, Kotoko and Kurou form a partnership to deal with mysteries, from ancient demons to the ghost of an idol. But for a girl who's used to dealing with spirits, winning love might prove to be the bigger challenge!</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="flex bg-white rounded overflow-hidden mb-4 md:mb-0">
-					<div class="relative pr-48">
-						<img class="absolute h-full w-full object-cover" src="https://u.livechart.me/anime/8682/poster_image/4a69a7fd45787c86c90ecb59fbccecfc.png?style=small&format=jpg">
-					</div>
-					<div class="flex flex-col justify-between p-4 pr-0">
-						<div>
-							<h4 class="text-lg font-bold">Haikyuu!!: To the Top</h4>
-							<span class="text-sm text-gray-400">Comedy · Drama · School · Shounen · Sports</span>
-						</div>
-						<div class="overflow-auto h-36">
-							<p>The Karasuno High School Volleyball Club finally won their way into the nationals after an intense battle for the Miyagi Prefecture Spring Tournament qualifiers. As they were preparing for the nationals, Kageyama is invited to go to All-Japan Youth Training Camp. At the same time, Tsukishima is invited to go to a special rookie select training camp for first-years in Miyagi Prefecture. Hinata feels panic that he’s being left behind as one of the first-years and then decides to show up at the Miyagi Prefecture rookie select training camp anyway... As they prepare for the nationals, Hinata, Kageyama and the rest of the Karasuno High School Volleyball team get ready to face some new challenges!!</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="flex bg-white rounded overflow-hidden mb-4 md:mb-0">
-					<div class="relative pr-48">
-						<img class="absolute h-full w-full object-cover" src="https://u.livechart.me/anime/9710/poster_image/d7e7441b20f1b310d3a9acdf355927b5.jpg?style=small&format=jpg">
-					</div>
-					<div class="flex flex-col justify-between p-4 pr-0">
-						<div>
-							<h4 class="text-lg font-bold">Re:Zero kara Hajimeru Isekai Seikatsu: Shin Henshuu-ban</h4>
-							<span class="text-sm text-gray-400">Drama · Fantasy · Psychological · Thriller</span>
-						</div>
-						<div class="overflow-auto h-36">
-							<p>By dying, a powerless boy obtained the ability "Return by Death," allowing him to go back in time upon death.</p>
-							<p>Natsuki Subaru was abruptly summoned to another world on his way home from the convenience store one night. In this new world where he had nothing and no one to turn to, the one power he gained was "Return by Death," the ability to turn back time upon his own death. To protect those he holds dear, and to take back irreplaceable moments in time, he fights despair as he confronts his cruel fate.</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="flex bg-white rounded overflow-hidden mb-4 md:mb-0">
-					<div class="relative pr-48">
-						<img class="absolute h-full w-full object-cover" src="https://u.livechart.me/anime/9481/poster_image/2cc122e9d6534215d839f127b931e863.jpg?style=small&format=jpg">
-					</div>
-					<div class="flex flex-col justify-between p-4 pr-0">
-						<div>
-							<h4 class="text-lg font-bold">Isekai Quartet 2</h4>
-							<span class="text-sm text-gray-400">Comedy · Fantasy · Parody</span>
-						</div>
-						<div class="overflow-auto h-36">
-							<p>No synopsis has been added to this title.</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="flex bg-white rounded overflow-hidden mb-4 md:mb-0">
-					<div class="relative pr-48">
-						<img class="absolute h-full w-full object-cover" src="https://u.livechart.me/anime/3110/poster_image/205556ff45a01e2978278340fcb6534f.png?style=small&format=jpg">
-					</div>
-					<div class="flex flex-col justify-between p-4 pr-0">
-						<div>
-							<h4 class="text-lg font-bold">Plunderer</h4>
-							<span class="text-sm text-gray-400">Action · Ecchi · Fantasy · Shounen</span>
-						</div>
-						<div class="overflow-auto h-36">
-							<p>It's the year 305 of the Alcian calendar, and the world is controlled by numbers. Every human born is branded with a "Count,” which could mean anything from the number of kilometers walked to the amount of people who have said your food is tasty. And if your Count drops to 0… you'll be sent into the Abyss! After Hina's mother's Count dropped to 0, her last request is for Hina to look for the Legendary Red Baron.</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="flex bg-white rounded overflow-hidden mb-4 md:mb-0">
-					<div class="relative pr-48">
-						<img class="absolute h-full w-full object-cover" src="https://u.livechart.me/anime/9380/poster_image/b799b1ce3304a5e5a4138d97a446a632.png?style=small&format=jpg">
-					</div>
-					<div class="flex flex-col justify-between p-4 pr-0">
-						<div>
-							<h4 class="text-lg font-bold">Somali to Mori no Kamisama</h4>
-							<span class="text-sm text-gray-400">Adventure · Fantasy · Slice of Life</span>
-						</div>
-						<div class="overflow-auto h-36">
-							<p class="mb-2">The world is ruled by spirits, goblins and all manner of strange creatures.</p>
-							<p class="mb-2">Human beings are persecuted, to the very point of extinction.</p>
-							<p class="mb-2">One day, a golem and a lone human girl meet.</p>
-							<p>This is a record of the pair; one a member of a ruined race, the other a watchman of the forest. It tells of their travels together, and of the bond between father and daughter.</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="flex bg-white rounded overflow-hidden mb-4 md:mb-0">
-					<div class="relative pr-48">
-						<img class="absolute h-full w-full object-cover" src="https://u.livechart.me/anime/9484/poster_image/4118b89654370b5460aaf7a2ce1ae755.png?style=small&format=jpg">
-					</div>
-					<div class="flex flex-col justify-between p-4 pr-0">
-						<div>
-							<h4 class="text-lg font-bold">Ishuzoku Reviewers</h4>
-							<span class="text-sm text-gray-400">Comedy · Ecchi · Fantasy</span>
-						</div>
-						<div class="overflow-auto h-36">
-							<p>Beauty truly is in the eye of the beholder! From elves to succubi to cyclopes and more, the Yoruno Gloss reviewers are here to rate the red-light delights of all manner of monster girls...The only thing is, they can never agree on which species are the hottest!</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="flex bg-white rounded overflow-hidden mb-4 md:mb-0">
-					<div class="relative pr-48">
-						<img class="absolute h-full w-full object-cover" src="https://u.livechart.me/anime/9358/poster_image/6f6c65b0a95d9cab48c0ab606f01ee8b.png?style=small&format=jpg">
-					</div>
-					<div class="flex flex-col justify-between p-4 pr-0">
-						<div>
-							<h4 class="text-lg font-bold">Jibaku Shounen Hanako-kun</h4>
-							<span class="text-sm text-gray-400">Comedy · School · Supernatural</span>
-						</div>
-						<div class="overflow-auto h-36">
-							<p>At Kamome Academy, rumors abound about the school's Seven Mysteries, one of which is Hanako-san. Said to occupy the third stall of the third floor girls' bathroom in the old school building, Hanako-san grants any wish when summoned. Yashiro Nene, an occult-loving high school girl who dreams of romance, ventures into this haunted bathroom...but the Hanako-san she meets there is nothing like she imagined! Kamome Academy's Hanako-san...is a boy!</p>
-						</div>
-					</div>
-				</div>
+			<div id="winter" class="winter grid grid-cols-1 md:grid-cols-2 md:gap-3">
 
 			</div>
 		</section>
