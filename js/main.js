@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
 				console.log("Fetching JSON data...");
 				console.log(data);
 				_menu(data);
-				//_cards(data);
+				_cards(data);
 				resolve("fetchJson done.");
 			});
 		});
