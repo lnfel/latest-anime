@@ -48,13 +48,13 @@ h1 {
 	font-style: italic;
 }
 
-ul > li.nav-li:hover > a {
+ul > li.nav-li:hover > div {
 	background: linear-gradient(312deg, rgb(109, 40, 217) 0%, rgb(176 220 236) 26%, rgba(59, 130, 246, 1) 100%);
 	color: #fff;
 }
 
 .expand > ul {
-	display: none;
+	/*display: none;*/
 }
 
 .expand > ul li > a {

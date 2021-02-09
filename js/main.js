@@ -16,6 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 	}
 
+	function _create(tag) {
+		return document.createElement(tag);
+	}
+
 	const menuBtn = _select(".menu-btn");
 	const mainMenu = _select(".main-menu");
 	const overlay = _select(".overlay");
@@ -130,10 +134,18 @@ document.addEventListener('DOMContentLoaded', function() {
 		menu.forEach(function(item, index) {
 			if (item.length > 0) {
 				let list = navLi[index];
-
-				_setAttributes(list.children[0].children[1], {
+				let chevronDown = _create("i");
+				let chevronUp = _create("i");
+				
+				_setAttributes(chevronDown, {
 					"class": "fas fa-chevron-down"
 				});
+				_setAttributes(chevronUp, {
+					"class": "fas fa-chevron-up hidden"
+				});
+
+				list.children[0].children[1].appendChild(chevronUp);
+				list.children[0].children[1].appendChild(chevronDown);
 
 				console.log(list);
 				console.log(item.length);
@@ -147,6 +159,29 @@ document.addEventListener('DOMContentLoaded', function() {
 				});
 			}
 		});
+
+		let dropdown = _getAll(".dropdown");
+		console.log(dropdown);
+		if (dropdown.length > 0) {
+			dropdown.forEach(function(el) {
+				let switcher = false;
+				el.addEventListener('click', function(e) {
+					if (switcher === true) {
+						this.children[0].classList.add("hidden");
+						this.children[1].classList.remove("hidden");
+						switcher = false;
+						this.parentNode.parentNode.children[1].classList.add("hidden");
+						this.parentNode.parentNode.children[1].classList.remove("block");
+					} else {
+						this.children[1].classList.add("hidden");
+						this.children[0].classList.remove("hidden");
+						switcher = true;
+						this.parentNode.parentNode.children[1].classList.add("block");
+						this.parentNode.parentNode.children[1].classList.remove("hidden");
+					}
+				});
+			});
+		}
 
 		console.log("Winter 2020 Anime" in data);
 	}
