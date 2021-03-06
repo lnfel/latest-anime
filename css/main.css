@@ -26,6 +26,8 @@
 	background-clip: content-box;
 }
 
+[x-cloak] { display: none; }
+
 main {
 	touch-action: pan-y pinch-zoom;
 }
