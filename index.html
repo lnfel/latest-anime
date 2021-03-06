@@ -87,7 +87,7 @@
 								x-html="showSummerList ? value = `<i class='fas fa-chevron-up'></i>` : value = `<i class='fas fa-chevron-down'></i>`" class="dropdown cursor-pointer px-4 py-2"></div>
 						</div>
 						<ul :class="{ 'hidden' : !showSummerList }" class="sub-li text-sm">
-							<template x-for="(item, index) in springList" :key="index">
+							<template x-for="(item, index) in summerList" :key="index">
 								<li class="">
 									<a
 										@click.prevent="target = item.split(' ').join('-').toLowerCase(), showNavMenu = false"
@@ -107,7 +107,7 @@
 								x-html="showFallList ? value = `<i class='fas fa-chevron-up'></i>` : value = `<i class='fas fa-chevron-down'></i>`" class="dropdown cursor-pointer px-4 py-2"></div>
 						</div>
 						<ul :class="{ 'hidden' : !showFallList }" class="sub-li text-sm">
-							<template x-for="(item, index) in springList" :key="index">
+							<template x-for="(item, index) in fallList" :key="index">
 								<li class="">
 									<a
 										@click.prevent="target = item.split(' ').join('-').toLowerCase(), showNavMenu = false"
